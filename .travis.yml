@@ -28,4 +28,4 @@ script:
   - python setup.py install
   - make run
   - bash travis/sleep_if_needed.sh
-  - metric_tester -t full
+  - metric_tester -t travis_test
