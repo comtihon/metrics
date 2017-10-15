@@ -1,3 +1,5 @@
+from time import sleep
+
 from tester.test.full import FullTest
 
 
@@ -9,3 +11,7 @@ class TravisTest(FullTest):
 
     def check_kafka(self, sensor_id: str, events_temperature: list) -> bool:
         return True
+
+    def check_redis(self, sensor_id: str) -> bool:
+        sleep(1)
+        return super().check_redis(sensor_id)

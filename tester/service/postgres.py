@@ -74,7 +74,7 @@ class Postgres:
             cur.execute("SELECT temperature from event where sensor_uuid='" + sensor_id + "'")
             res = [t[0] for t in cur.fetchall()]
             if not res and retry:
-                sleep(1)
+                sleep(5)  # to wait for events
                 return Postgres.find_events(cur, sensor_id, False)
             return res
         except Exception as e:
