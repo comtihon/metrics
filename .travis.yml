@@ -7,6 +7,11 @@ cache:
     - $HOME/services
 services:
   - docker
+  - postgresql
+before_script:
+  - psql -c "CREATE ROLE metric WITH LOGIN PASSWORD 'metric';" -U postgres
+  - psql -c "create database metric;" -U postgres
+  - psql -c "GRANT ALL PRIVILEGES ON DATABASE metric TO metric;" -U postgres
 before_cache:
     # Save tagged docker images
     - >
