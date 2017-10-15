@@ -53,7 +53,7 @@ class FullTest(Test):
             return False
         if not self.check_redis(sensor_id):
             return False
-        if not self.postgres.check_measurements(sensor_id, self.metrics, self.events_t):
+        if not self.check_postgres(sensor_id):
             return False
         if not self.check_accessor(sensor_id):
             return False
@@ -77,6 +77,9 @@ class FullTest(Test):
             return False
         print(Fore.GREEN + "OK")
         return True
+
+    def check_postgres(self, sensor_id: str) -> bool:
+        return self.postgres.check_measurements(sensor_id, self.metrics, self.events_t)
 
     def check_accessor(self, sensor_id: str) -> bool:
         if not self.accessor.check_measurements(sensor_id, self.metrics):

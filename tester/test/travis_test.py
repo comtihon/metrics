@@ -15,3 +15,7 @@ class TravisTest(FullTest):
     def check_redis(self, sensor_id: str) -> bool:
         sleep(5)
         return super().check_redis(sensor_id)
+
+    def check_postgres(self, sensor_id: str) -> bool:
+        sleep(5)
+        return super().check_postgres(sensor_id)
