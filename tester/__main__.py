@@ -1,9 +1,9 @@
 """Metric integration test tool
 
 Usage:
-  survey_tester [-t TESTS]
-  survey_tester -v | --version
-  survey_tester -h | --help
+  metric_tester [-t TESTS]
+  metric_tester -v | --version
+  metric_tester -h | --help
 
 Options:
   -h --help                          show this help message and exit

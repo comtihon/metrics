@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function build {
-    if [[ ! "$(docker images -q com.surveyor.$1)" ]]
+    if [[ ! "$(docker images -q com.metric.$1)" ]]
     then
         echo "building $1"
         mkdir -p services
