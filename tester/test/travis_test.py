@@ -13,5 +13,5 @@ class TravisTest(FullTest):
         return True
 
     def check_redis(self, sensor_id: str) -> bool:
-        sleep(1)
+        sleep(5)
         return super().check_redis(sensor_id)
