@@ -9,6 +9,10 @@ class TravisTest(FullTest):
         super().__init__(conf)
         self._name = __name__.split('.')[-1:][0]
 
+    def run(self) -> bool:
+        sleep(5)
+        return super().run()
+
     def check_kafka(self, sensor_id: str, events_temperature: list) -> bool:
         return True
 
@@ -17,5 +21,5 @@ class TravisTest(FullTest):
         return super().check_redis(sensor_id)
 
     def check_postgres(self, sensor_id: str) -> bool:
-        sleep(5)
+        sleep(7)
         return super().check_postgres(sensor_id)
