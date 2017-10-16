@@ -26,6 +26,6 @@ before_install:
   - if [[ -d $HOME/docker ]]; then ls $HOME/docker/*.tar.gz | xargs -I {file} sh -c "zcat {file} | docker load"; fi
 script:
   - python setup.py install
-  - make run &
+  - make run
   - bash travis/sleep_if_needed.sh
   - metric_tester -t travis_test
