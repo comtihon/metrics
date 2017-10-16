@@ -1,3 +1,6 @@
+import uuid
+from time import sleep
+
 from colorama import Fore
 
 from tester.service.accessor import Accessor
@@ -46,7 +49,8 @@ class FullTest(Test):
         return self._accessor
 
     def run(self) -> bool:
-        sensor_id = 'test_sensor'
+        sleep(10)  # to wait for all services to be 100% ready
+        sensor_id = str(uuid.uuid4())
         if not self._report_metrics(sensor_id):
             return False
         if not self.check_kafka(sensor_id, self.events_t):
