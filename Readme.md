@@ -31,6 +31,7 @@ Metrics ---> Receiver ---> Kafka --------> Saver ------> Postres
 * `Kafka`: more partitions for topic
 * `Redis`: switch to cluster
 * `Kafka`: use cluster
+* `Kafka`: switch `Processor` to kafka-streams
 * `Postgres` : `Assessor`s should read from slaves.
 
 ## Run

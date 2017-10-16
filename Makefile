@@ -9,6 +9,6 @@ test_run: test_install
 build: 
 	./build_images.sh
 run: build
-	docker-compose up
+	docker-compose up -d
 stop:
 	docker-compose down
